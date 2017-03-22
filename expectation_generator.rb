@@ -17,7 +17,7 @@ class ExpectationGenerator
         expectation.response do |response|
             response.status_code = 200
             response.headers << header('Content-Type', 'application/json; charset=utf-8')
-            response.body = body(File.read('sessions.json').to_json)
+            response.body = body(File.read('sessions.json'))
             response.delay = delay_by(:SECONDS, 1)
         end
     end
